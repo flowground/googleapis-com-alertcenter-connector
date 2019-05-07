@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "customerId": {
+            "type": "string"
+        },
+        "access_token": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Customer-level settings.",
+            "properties": {
+                "notifications": {
+                    "description": "The list of notifications.",
+                    "items": {
+                        "description": "Settings for callback notifications.\nFor more details see [G Suite Alert\nNotification](/admin-sdk/alertcenter/guides/notifications).",
+                        "properties": {
+                            "cloudPubsubTopic": {
+                                "description": "A Google Cloud Pub/sub topic destination.",
+                                "properties": {
+                                    "payloadFormat": {
+                                        "description": "Optional. The format of the payload that would be sent.\nIf not specified the format will be JSON.",
+                                        "enum": [
+                                            "PAYLOAD_FORMAT_UNSPECIFIED",
+                                            "JSON"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "topicName": {
+                                        "description": "The `name` field of a Cloud Pubsub [Topic]\n(https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics#Topic).",
+                                        "type": "string"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

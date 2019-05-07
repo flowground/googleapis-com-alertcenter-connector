@@ -1,0 +1,83 @@
+{
+    "type": "object",
+    "properties": {
+        "alertId": {
+            "required": true,
+            "type": "string"
+        },
+        "customerId": {
+            "type": "string"
+        },
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json",
+                "media",
+                "proto"
+            ],
+            "default": "json"
+        },
+        "callback": {
+            "type": "string"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "uploadType": {
+            "type": "string"
+        },
+        "upload_protocol": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "A customer feedback about an alert.",
+            "properties": {
+                "alertId": {
+                    "description": "Output only. The alert identifier.",
+                    "type": "string"
+                },
+                "createTime": {
+                    "description": "Output only. The time this feedback was created.",
+                    "format": "google-datetime",
+                    "type": "string"
+                },
+                "customerId": {
+                    "description": "Output only. The unique identifier of the Google account of the customer.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "Output only. The email of the user that provided the feedback.",
+                    "type": "string"
+                },
+                "feedbackId": {
+                    "description": "Output only. The unique identifier for the feedback.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Required. The type of the feedback.",
+                    "enum": [
+                        "ALERT_FEEDBACK_TYPE_UNSPECIFIED",
+                        "NOT_USEFUL",
+                        "SOMEWHAT_USEFUL",
+                        "VERY_USEFUL"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
